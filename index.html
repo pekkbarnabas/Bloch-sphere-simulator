@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvantum Bloch-gömb Szimulátor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+</head>
+
+<body>
+    <h1>Bloch-gömb Szimulátor</h1>
+
+    <div id="alkalmazas-tarolo">
+
+        <div id="vezerlok">
+            <h2>Kezdőállapotok</h2>
+
+            <label>Theta (θ): <span id="theta-val">0</span>°</label>
+            <input type="range" id="theta-slider" min="0" max="180" value="0">
+
+            <label>Phi (φ): <span id="phi-val">0</span>°</label>
+            <input type="range" id="phi-slider" min="0" max="360" value="0">
+            <button id="btn-set" class="kapu-gomb">Beállítás</button>
+
+            <hr style="border-color: #333; margin: 15px 0;">
+
+            <h2>Kvantumkapuk</h2>
+            <button id="btn-x" class="kapu-gomb">X kapu</button>
+            <button id="btn-y" class="kapu-gomb">Y kapu</button>
+            <button id="btn-z" class="kapu-gomb">Z kapu</button>
+            <button id="btn-h" class="kapu-gomb">Hadamard kapu</button>
+            <button id="btn-s" class="kapu-gomb">Fázisforgató</button>
+            <button id="btn-t" class="kapu-gomb">T kapu</button>
+
+            <hr style="border-color: #333; margin: 15px 0;">
+
+            <button id="btn-save" class="kapu-gomb" style="background-color: #2ed573;">Állapot rögzítése</button>
+            <button id="btn-clear" class="kapu-gomb" style="background-color: #ff4657;">Állapotok törlése</button>
+
+            <h2>Áramkör</h2>
+            <div id="history" style="min-height: 30px; padding: 10px; background: #000; border-radius: 5px; color: #00d2ff; letter-spacing: 2px;">|ψ⟩</div>
+        </div>
+
+        <div id="gomb-tarolo"></div>
+
+    </div>
+
+    <div id="mentett-tarolo">
+        <h2>Rögzített állapotok</h2>
+        <ul id="mentett-lista"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
